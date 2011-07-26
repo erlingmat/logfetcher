@@ -1,1 +1,1 @@
-servlet: lein run -m logfetcher.servlet
+web: lein run -m logfetcher.servlet

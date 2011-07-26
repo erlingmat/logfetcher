@@ -1,5 +1,5 @@
 (defproject logfetcher "1.0.0-SNAPSHOT"
-  :description "FIXME: write"
+  :description "FIXME: Logfetcher fetches data from loggly to be presented in geckoboard"
   :dependencies [[org.clojure/clojure "1.2.0"]
                  [org.clojure/clojure-contrib "1.2.0"]
 		 [compojure "0.6.1"]
@@ -9,10 +9,7 @@
                  [clj-json "0.3.1"]
                  [yousee-common "1.0.26"]
                  [ring-common "1.1.1"]
-                 [log4j "1.2.15" :exclusions [javax.mail/mail
-                                              javax.jms/jms
-                                              com.sun.jdmk/jmxtools
-                                              com.sun.jmx/jmxri]]
+		 [ring/ring-jetty-adapter "0.3.7"]
 		 ]
   :dev-dependencies [[ring/ring-jetty-adapter "0.3.7"]
 		     [org.mortbay.jetty/jetty-plus "6.1.14"]
@@ -28,4 +25,5 @@
 
   
   :aot [logfetcher.servlet]
+  :main {:handler logfetcher.servlet/app}
   )
