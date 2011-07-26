@@ -1,0 +1,4 @@
+(ns logfetcher.routes)
+
+  (GET ["/:context/ping", :context #".[^/]*"]  []
+       {:status 200, :headers {"Content-Type" "text/plain" "expires" "0" "cache-control" "no-cache"} :body "pong" })

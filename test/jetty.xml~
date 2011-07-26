@@ -1,0 +1,34 @@
+<Configure id="Server" class="org.mortbay.jetty.Server">
+  <New class="org.mortbay.jetty.plus.naming.Resource">
+    <Arg></Arg>
+    <Arg>java:comp/env/jdbc/EDM</Arg>
+    <Arg>
+      <New class="oracle.jdbc.pool.OracleDataSource">
+	<Set name="DriverType">thin</Set>
+	<Set name="URL">jdbc:oracle:thin:@lisbon:1521:tctvspoc</Set>
+	<Set name="User">k2_dw</Set>
+	<Set name="Password">K2_DW_ON_SPOC</Set>
+      </New>
+    </Arg>
+  </New>
+  
+  <New class="org.mortbay.jetty.plus.naming.Resource">
+    <Arg></Arg>
+    <Arg>java:comp/env/kasia2/kasiahost</Arg>
+    <Arg>
+      <New class="java.lang.String">
+	<Arg>http://darton:40201</Arg>
+      </New>
+    </Arg>
+  </New>
+
+  <New class="org.mortbay.jetty.plus.naming.Resource">
+    <Arg></Arg>
+    <Arg>java:comp/env/kasia2/adresse/base-uri</Arg>
+    <Arg>
+      <New class="java.lang.String">
+	<Arg>http://localhost:8080/adresse-v1</Arg>
+      </New>
+    </Arg>
+  </New>
+</Configure>
